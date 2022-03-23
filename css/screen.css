@@ -13,12 +13,12 @@
 */
 
 html {
-    font-size: 16px;
-    line-height: 1.5;
-    font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
-    color: #111;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /*
@@ -29,9 +29,9 @@ html {
  */
 
 ::selection {
-    background: #e85e00;
-    color: white;
-    text-shadow: none;
+  background: #e85e00;
+  color: white;
+  text-shadow: none;
 }
 
 /*------------------------------------*\
@@ -45,8 +45,8 @@ html {
 */
 
 img {
-    max-width: 100%;
-    vertical-align: top;
+  max-width: 100%;
+  vertical-align: top;
 }
 
 /*
@@ -56,39 +56,39 @@ img {
 */
 
 h1 {
-    font-family: "Times New Roman", serif;
-    font-size: 36px;
-    font-weight: normal;
-    line-height: 40px;
-    margin: 0 0 24px;
+  font-family: 'Times New Roman', serif;
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 40px;
+  margin: 0 0 24px;
 }
 
 /* Example inline media query */
 @media (min-width: 768px) {
-    h1 {
-        font-size: 58px;
-        line-height: 64px;
-    }
+  h1 {
+    font-size: 58px;
+    line-height: 64px;
+  }
 }
 
 h2 {
-    font-size: 23px;
-    line-height: 32px;
-    margin: 0 0 24px;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
 }
 
 h3 {
-    font-size: 18px;
-    line-height: 24px;
-    margin: 0 0 24px;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
 }
 
 h4,
 h5,
 h6 {
-    font-size: 16px;
-    line-height: 24px;
-    margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 24px;
 }
 
 p,
@@ -98,59 +98,59 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+  margin: 0 0 24px;
 }
 
 ul,
 ol {
-    padding-left: 24px;
+  padding-left: 24px;
 }
 
 li ul,
 li ol {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 blockquote {
-    font-style: italic;
-    font-size: 23px;
-    line-height: 32px;
-    margin: 0 0 24px;
-    font-family: "Times New Roman", serif;
+  font-style: italic;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+  font-family: 'Times New Roman', serif;
 }
 
 blockquote * {
-    font-size: inherit;
-    line-height: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 figcaption {
-    font-size: 12px;
-    line-height: 16px;
-    padding-top: 8px;
-    color: Grey;
+  font-size: 12px;
+  line-height: 16px;
+  padding-top: 8px;
+  color: Grey;
 }
 
 hr {
-    border: 0;
-    height: 1px;
-    background: LightGrey;
-    margin: 0 0 24px;
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 24px;
 }
 
 a {
-    color: RoyalBlue;
-    transition: all .1s ease-in-out;
+  color: RoyalBlue;
+  transition: all 0.1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: BlueViolet;
+  color: BlueViolet;
 }
 
 a:hover,
 a:focus {
-    color: Crimson;
+  color: Crimson;
 }
 
 /*------------------------------------*\
@@ -158,10 +158,47 @@ a:focus {
 \*------------------------------------*/
 
 /*
-    Object: Object name
+    Objects: Row
     ---
-    Object description
+    NL: Creëert een horizontale rij die het kijkvenster uitrekt en opvulling rond kinderen toevoegt
+    Creates a horizontal row that stretches the viewport and adds padding around children
 */
+/*flowroot zorgt voor mooi overflow??*/
+.o-row {
+  padding: 24px 24px 0;
+  display: flow-root;
+}
+
+.o-row--primary {
+  background-color: #e85e00;
+  color: aliceblue;
+}
+
+/*-- is dus modifier*/
+.o-row--dark {
+  background-color: #111;
+  color: aliceblue;
+}
+
+@media (min-width: 768px) {
+  .o-row--lg {
+    padding: 48px 48px 24px;
+  }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+/*1440px naar em waardes
+em verwijst naar base unit van fontsize => 16px
+1440:16 = 90 em
+*/
+.o-container {
+  max-width: 90em;
+  margin: 0 auto;
+}
 
 /*------------------------------------*\
   #COMPONENTS
@@ -184,7 +221,33 @@ a:focus {
 */
 
 .u-max-width-sm {
-    max-width: 36em;
+  max-width: 36em;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-sm {
+  max-width: 36em !important;
+}
+
+.u-max-width-md {
+  max-width: 45em !important;
+}
+
+.u-max-width-lg {
+  max-width: 60em !important;
+}
+
+.u-max-width-xl {
+  max-width: 75em !important;
+}
+
+.u-max-width-none {
+  max-width: none !important;
 }
 
 /*
@@ -233,61 +296,61 @@ a:focus {
 */
 
 @media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important;
-        /* Black prints faster:
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-    /*
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: ' (' attr(href) ')';
+  }
+  abbr[title]:after {
+    content: ' (' attr(title) ')';
+  }
+  /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-    /*
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-    thead {
-        display: table-header-group;
-    }
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
