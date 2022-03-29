@@ -321,6 +321,10 @@ em verwijst naar base unit van fontsize => 16px
   align-content: space-between;
 }
 
+.o-layout--align-content-space-evenly {
+  align-content: space-evenly;
+}
+
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
